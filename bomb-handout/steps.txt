@@ -1,0 +1,63 @@
+phase_1:
+    gdb bomb
+    disas phase_1
+    print 0x402400
+    x /s 0x402400
+    0x402400: "Border relations with Canada have never been better."
+    answer: Border relations with Canada have never been better.
+
+phase_2:
+    gdb bomb
+    disas phase_2
+    disas 0x40145c
+    x /s 0x4025c3
+    0x4025c3: "%d %d %d %d %d %d"
+    answer: 1 2 4 8 16 32
+
+phase_3:
+    gdb bomb
+    print 0x4025cf
+    x /s 0x4025cf
+    0x4025cf: "%d %d"
+    answer1: 0 207
+    answer2: 1 311
+    answer3: 2 707
+    answer4: 3 256
+    answer5: 4 389
+    answer6: 5 206
+    answer7: 6 682
+    answer8: 7 327
+
+phase_4:
+    gdb bomb
+    x /s 0x4025cf
+    0x4025cf: "%d %d"
+    answer: 0 0
+    secret_phase answer: 0 0 DrEvil
+
+phase_5:
+    gdb bomb
+    x /s 0x40245e
+    0x40245e: "flyers"
+    x /s 0x4024b0
+    0x4024b0 <array.3449>: "maduiersnfotvbylSo you think you can stop the bomb with ctrl-c, do you?"
+    9: 1001 15: 1111 14: 1110 5: 0101 6: 0110 7: 0111
+    answer: ionefg
+
+phase_6:
+    gdb bomb
+    answer: 4 3 2 1 6 5
+
+secret_phase:
+    gdb bomb
+    x /s 0x603870
+    0x603870<input_strings+240>: "0 0"
+    x /s 0x402619
+    0x402619: "%d %d %s"
+    x /s 0x402622
+    0x402622: "DrEvil"
+    disas secret_phase
+    disas 0x401204
+    x /120wx 0x6030f0
+    answer1: 20
+    answer2: 22

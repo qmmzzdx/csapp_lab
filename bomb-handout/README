@@ -1,0 +1,6 @@
+This is an x86-64 bomb for self-study students. 
+
+You can use solutions.txt to test your answers:
+    linux> ./bomb solutions.txt
+
+In steps.txt, you can find some steps to use gdb for bomb.
